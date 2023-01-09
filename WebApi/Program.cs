@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options =>
 {
-    options.Filters.Add(new GloabalActionFilter());
+    options.Filters.Add(new GloabalActionFilter("Global"));
 });
 
 builder.Services.AddEndpointsApiExplorer();

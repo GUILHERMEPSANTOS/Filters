@@ -16,6 +16,7 @@ public class UserController : ControllerBase
 
 [ApiController]
 [Route("[controller]")]
+[SampleActionFilterAttribute("Attribute Controller")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -31,7 +32,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    [SampleActionFilterAttribute("SampleActionFilterAttribute")]
+    [SampleActionFilterAttribute("Attribute Method", -10)]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
